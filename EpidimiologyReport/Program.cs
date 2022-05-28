@@ -2,14 +2,16 @@ using EpidimiologyReport;
 using EpidimiologyReport.Api.Controllers;
 using EpidimiologyReport.Services;
 using EpidimiologyReport.Dal;
-
+using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddScoped<ILocationRepository, LocationRepository>();
 builder.Services.AddScoped<IPatientRepository, PatientRepository>();
-
+builder.Host.UseSerilog((ctx, lc) => lc
+    .WriteTo.Console()
+    .WriteTo.File("C:/Users/מירי/source/repos/EpidimiologyReport/log.txt"));
 
 
 

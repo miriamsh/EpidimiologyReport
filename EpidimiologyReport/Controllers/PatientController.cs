@@ -14,17 +14,20 @@ namespace EpidimiologyReport.Api.Controllers
     [ApiController]
     public class PatientController : ControllerBase 
     {
+        public readonly ILogger _logger;
 
-        IPatientRepository _patientRepository;
-        public  PatientController(IPatientRepository patientRepository)
+        public readonly IPatientRepository _patientRepository;
+        public  PatientController(IPatientRepository patientRepository, ILogger<PatientController> logger)
         {
             _patientRepository = patientRepository;
+            _logger = logger;
 
         }
         // GET api/<PatientController>/5
         [HttpGet("{id}")]
         public async Task<Patient> Get(string id)
         {
+            _logger.LogInformation("enter to Get function in PatientController with id: " + id);
             return await _patientRepository.Get(id);
         }
 
@@ -32,6 +35,7 @@ namespace EpidimiologyReport.Api.Controllers
         [HttpPost]
         public async Task Save([FromBody] Patient patient)
         {
+            _logger.LogInformation("enter to Post function in PatientController with patient id: " + patient.PatientId);
            await _patientRepository.Save(patient);
         }
 

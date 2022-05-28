@@ -1,0 +1,18 @@
+2022-05-28 23:57:41.000 +03:00 [INF] Now listening on: http://localhost:5282
+2022-05-28 23:57:41.021 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-05-28 23:57:41.022 +03:00 [INF] Hosting environment: Development
+2022-05-28 23:57:41.022 +03:00 [INF] Content root path: C:\Users\מירי\source\repos\EpidimiologyReport\EpidimiologyReport\
+2022-05-28 23:57:42.029 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5282/swagger/index.html - -
+2022-05-28 23:57:42.369 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5282/_framework/aspnetcore-browser-refresh.js - -
+2022-05-28 23:57:42.372 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5282/_framework/aspnetcore-browser-refresh.js - - - 200 11952 application/javascript;+charset=utf-8 2.8283ms
+2022-05-28 23:57:42.372 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5282/swagger/index.html - - - 200 - text/html;charset=utf-8 356.1012ms
+2022-05-28 23:57:42.513 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5282/swagger/v1/swagger.json - -
+2022-05-28 23:57:42.684 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5282/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 170.8405ms
+2022-05-28 23:57:54.878 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5282/api/Patient/000000018 - -
+2022-05-28 23:57:54.886 +03:00 [INF] Executing endpoint 'EpidimiologyReport.Api.Controllers.PatientController.Get (EpidimiologyReport)'
+2022-05-28 23:57:54.914 +03:00 [INF] Route matched with {action = "Get", controller = "Patient"}. Executing controller action with signature System.Threading.Tasks.Task`1[EpidimiologyReport.Services.Models.Patient] Get(System.String) on controller EpidimiologyReport.Api.Controllers.PatientController (EpidimiologyReport).
+2022-05-28 23:57:55.090 +03:00 [INF] enter to Get function in PatientController with id: 000000018
+2022-05-28 23:57:55.098 +03:00 [INF] Executing ObjectResult, writing value of type 'EpidimiologyReport.Services.Models.Patient'.
+2022-05-28 23:57:55.111 +03:00 [INF] Executed action EpidimiologyReport.Api.Controllers.PatientController.Get (EpidimiologyReport) in 189.8911ms
+2022-05-28 23:57:55.114 +03:00 [INF] Executed endpoint 'EpidimiologyReport.Api.Controllers.PatientController.Get (EpidimiologyReport)'
+2022-05-28 23:57:55.115 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5282/api/Patient/000000018 - - - 200 - application/json;+charset=utf-8 236.5646ms
