@@ -18,7 +18,7 @@ namespace EpidimiologyReport.Api.Controllers
 
         public readonly ILocationRepository _locationRepository;
 
-        public LocationController(ILocationRepository locationRepository, ILogger logger)
+        public LocationController(ILocationRepository locationRepository, ILogger<LocationController> logger)
         {
             _locationRepository = locationRepository;
             _logger = logger;
@@ -27,10 +27,12 @@ namespace EpidimiologyReport.Api.Controllers
         
         // GET: api/<LocationController>
         [HttpGet]
-        public async Task<List<Location>> Get([FromQuery] EpidimiologyReport.Services.Models.LocationSearch locationSearch)
+        public async Task<List<Location>> Get([FromQuery] string? locationSearch="")
         {
+            LocationSearch locationSearch1 = new LocationSearch();
+            locationSearch1.City = locationSearch;
             _logger.LogInformation("enter to Get function in LocatientController");
-           return await _locationRepository.Get(locationSearch);
+           return await _locationRepository.Get(locationSearch1);
         }
 
      

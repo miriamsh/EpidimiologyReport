@@ -32,7 +32,7 @@ namespace EpidimiologyReport.Dal
             {
                 locations.AddRange(_user.Locations);
             }
-            if(locationSearch!=null)
+            if(locationSearch.City!="")
                return locations.Where(l => l.City.Equals(locationSearch.City)).ToList();
             return locations;
         }
