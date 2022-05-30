@@ -27,12 +27,11 @@ namespace EpidimiologyReport.Api.Controllers
         
         // GET: api/<LocationController>
         [HttpGet]
-        public async Task<List<Location>> Get([FromQuery] string? locationSearch="")
+        public async Task<List<Location>> Get([FromQuery] LocationSearch locationSearch)
         {
-            LocationSearch locationSearch1 = new LocationSearch();
-            locationSearch1.City = locationSearch;
+             
             _logger.LogInformation("enter to Get function in LocatientController");
-           return await _locationRepository.Get(locationSearch1);
+           return await _locationRepository.Get(locationSearch);
         }
 
      
