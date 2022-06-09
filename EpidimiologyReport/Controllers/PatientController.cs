@@ -33,10 +33,11 @@ namespace EpidimiologyReport.Api.Controllers
 
         // POST api/<PatientController>
         [HttpPost]
-        public async Task Save([FromBody] Patient patient)
+        public  async Task Save([FromBody] Patient patient)
         {
             _logger.LogInformation("enter to Post function in PatientController with patient id: " + patient.PatientId);
-           await _patientRepository.Save(patient);
+             await _patientRepository.Save(patient);
+            
         }
 
 

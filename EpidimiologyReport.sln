@@ -14,7 +14,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EpidimiologyReport.Services
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{026E6785-64E2-4107-B363-9AB2BDAECD97}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EpidimiologyReport.Tests", "EpidimiologyReport.Tests\EpidimiologyReport.Tests.csproj", "{AF3D13A5-1C5F-4B51-9770-E7F3F992DE2F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EpidimiologyReport.Tests", "EpidimiologyReport.Tests\EpidimiologyReport.Tests.csproj", "{AF3D13A5-1C5F-4B51-9770-E7F3F992DE2F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{DA5657E8-4C51-43B5-BE55-EC5207340E2E}"
+	ProjectSection(SolutionItems) = preProject
+		comments.txt = comments.txt
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

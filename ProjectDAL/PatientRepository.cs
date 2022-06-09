@@ -24,16 +24,22 @@ namespace EpidimiologyReport.Dal
         public async Task<Patient> Get(string id)
         {
             List<Patient> users = Patients;
+
             Patient patient = users.First(user => user.PatientId.Equals(id));
+
             return patient;
         }
 
         public async Task Save(Patient patient)
         {
             List<Patient> users = Patients;
+           
             users.Add(patient);
+           
             string json = JsonConvert.SerializeObject(users);
+
             System.IO.File.WriteAllText(DataPath, json);
+            
         }
     }
 }

@@ -13,11 +13,11 @@ builder.Services.AddScoped<ILocationRepository, LocationRepository>();
 builder.Services.AddScoped<IPatientRepository, PatientRepository>();
 builder.Host.UseSerilog((ctx, lc) => lc
     .MinimumLevel.Debug()
-    .MinimumLevel.Override("Microsoft", LogEventLevel.Information)
+    //.MinimumLevel.Override("Microsoft", LogEventLevel.Information)
     // Filter out ASP.NET Core infrastructre logs that are Information and below
-    .MinimumLevel.Override("Microsoft.AspNetCore", LogEventLevel.Warning)
+    //.MinimumLevel.Override("Microsoft.AspNetCore", LogEventLevel.Warning)
     .Enrich.FromLogContext()
-    .WriteTo.Console()
+    //.WriteTo.Console()
     .WriteTo.File(new ExpressionTemplate(
           "[{@t:HH:mm:ss} {@l:u3} {SourceContext}] {@m}\n{@x}"),"C:/Users/מירי/source/repos/EpidimiologyReport/log.txt"));
 
@@ -43,8 +43,6 @@ app.UseAuthorization();
 app.UseHttpLogging();
 
 app.MapControllers();
-
-
 
 app.Run();
 
