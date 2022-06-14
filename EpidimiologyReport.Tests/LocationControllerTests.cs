@@ -29,7 +29,7 @@ namespace EpidimiologyReport.Tests
         [Fact]
         public async void GetLocation_ByCity_ReturnLoactionList()
         {
-
+             //syntax no. 1
             //_mockRepo.Setup(l => l.Get(GetSearchObject())).Returns(Task.FromResult(GetFilteredList()));
 
             //var result = await _controller.Get(GetSearchObject());
@@ -39,7 +39,7 @@ namespace EpidimiologyReport.Tests
             //Assert.True(result != null);
             //Assert.Equal(result.Count, expected.Count );
 
-            
+            //syntax no. 2
             using (var mock=AutoMock.GetLoose())
             {
                 LocationSearch location = GetSearchObject();

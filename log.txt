@@ -1,1 +1,5 @@
- 
+[14:40:53 INF Microsoft.Hosting.Lifetime] Now listening on: http://localhost:5282
+[14:40:53 INF Microsoft.Hosting.Lifetime] Application started. Press Ctrl+C to shut down.
+[14:40:53 INF Microsoft.Hosting.Lifetime] Hosting environment: Development
+[14:40:53 INF Microsoft.Hosting.Lifetime] Content root path: C:\Users\מירי\source\repos\EpidimiologyReport\EpidimiologyReport\
+[14:41:00 INF EpidimiologyReport.Api.Controllers.LocationController] enter to Get function in LocatientController

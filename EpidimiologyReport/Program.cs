@@ -11,11 +11,12 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddScoped<ILocationRepository, LocationRepository>();
 builder.Services.AddScoped<IPatientRepository, PatientRepository>();
+
 builder.Host.UseSerilog((ctx, lc) => lc
     .MinimumLevel.Debug()
-    //.MinimumLevel.Override("Microsoft", LogEventLevel.Information)
+    .MinimumLevel.Override("Microsoft", LogEventLevel.Information)
     // Filter out ASP.NET Core infrastructre logs that are Information and below
-    //.MinimumLevel.Override("Microsoft.AspNetCore", LogEventLevel.Warning)
+    .MinimumLevel.Override("Microsoft.AspNetCore", LogEventLevel.Warning)
     .Enrich.FromLogContext()
     //.WriteTo.Console()
     .WriteTo.File(new ExpressionTemplate(
@@ -39,6 +40,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseAuthorization();
+
+app.UseErrorLogging();
 
 app.UseHttpLogging();
 
