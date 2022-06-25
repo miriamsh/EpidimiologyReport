@@ -6,40 +6,28 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using EpidimiologyReport.Dal.Models;
 
 namespace EpidimiologyReport.Dal
 {
     public class PatientRepository : IPatientRepository
     {
-        public List<Patient> Patients { get; set; }
-        private const string DataPath = "C:/Users/מירי/source/repos/EpidimiologyReport/ProjectDAL/Data/users.json";
+         ReportingContext _context;
 
-        public PatientRepository()
+        public PatientRepository(ReportingContext context)
         {
-            using (StreamReader reader = System.IO.File.OpenText(DataPath))
-            {
-                Patients = JsonConvert.DeserializeObject<List<Patient>>(reader.ReadToEnd());
-            }
+            _context = context;
         }
         public async Task<Patient> Get(string id)
         {
-            List<Patient> users = Patients;
-
-            Patient patient = users.First(user => user.PatientId.Equals(id));
-
+            Patient patient = _context.Patients.First(user => user.Id.Equals(id));
             return patient;
         }
 
         public async Task Save(Patient patient)
         {
-            List<Patient> users = Patients;
-           
-            users.Add(patient);
-           
-            string json = JsonConvert.SerializeObject(users);
-
-            System.IO.File.WriteAllText(DataPath, json);
-            
+            _context.Patients.Add(patient);
+            _context.SaveChanges();
         }
     }
 }

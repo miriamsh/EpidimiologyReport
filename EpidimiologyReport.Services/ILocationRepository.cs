@@ -8,5 +8,7 @@ namespace EpidimiologyReport.Services
     public interface ILocationRepository
     {
         Task<List<Location>> Get(LocationSearch locationSearch);
+
+        Task Save(Location location);
     }
 }

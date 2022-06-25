@@ -6,6 +6,9 @@
         second with wrong parameters. Actually,
         whie writing a test-you have to consider all the possibilities for 
 
+        2)äæø÷ä áprogram ùì ädbcontext
+        injection of dbcontext 
+
     Topics:   
 
         2)types of dip implementation

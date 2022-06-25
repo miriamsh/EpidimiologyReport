@@ -4,37 +4,32 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using Newtonsoft.Json;
+using EpidimiologyReport.Dal.Models;
+
 namespace EpidimiologyReport.Dal
 {
     public class LocationRepository:ILocationRepository
     {
 
-        public List<Patient> Patients { get; set; }
-        private const string DataPath="C:/Users/מירי/source/repos/EpidimiologyReport/ProjectDAL/Data/users.json";
+         ReportingContext _context;
 
-        public LocationRepository()
+
+        public LocationRepository(ReportingContext context)
         {
-
-            using (StreamReader reader = System.IO.File.OpenText(DataPath))
-            {
-                Patients = JsonConvert.DeserializeObject<List<Patient>>(reader.ReadToEnd());
-            }
-
-
+            _context = context;
         }
 
         public async Task<List<Location>> Get(LocationSearch locationSearch)
-        {
-            List<Location> locations = new List<Location>();
-            List<Patient> users = this.Patients;
-
-            foreach (Patient _user in users)
-            {
-                locations.AddRange(_user.Locations);
-            }
+        { 
             if(locationSearch.City!="")
-               return locations.Where(l => l.City.Equals(locationSearch.City)).ToList();
-            return locations;
+               return _context.Locations.Where(l => l.City.Equals(locationSearch.City)).ToList();
+            return _context.Locations.ToList();
+        }
+
+        public async Task Save(Location location)
+        {
+            _context.Locations.Add(location);
+            _context.SaveChanges();
         }
     }
 }

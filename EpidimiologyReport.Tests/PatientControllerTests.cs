@@ -30,12 +30,12 @@ namespace EpidimiologyReport.Tests
         {
             string mockID = "212864797";
 
-            _mockRepo.Setup(l => l.Get(mockID)).Returns(Task.FromResult(new Patient() { PatientId=mockID}));
+            _mockRepo.Setup(l => l.Get(mockID)).Returns(Task.FromResult(new Patient() { Id=mockID}));
             
             var result = await _controller.Get(mockID);
 
             Assert.True(result != null);
-            Assert.Equal(result.PatientId,mockID);
+            Assert.Equal(result.Id,mockID);
         }
 
         [Fact]
@@ -55,8 +55,7 @@ namespace EpidimiologyReport.Tests
         {
             return new Patient()
             {
-                PatientId = "212864797",
-                Locations = null
+                Id = "212864797",
             };
         }
            
