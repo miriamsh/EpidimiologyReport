@@ -1,9 +1,7 @@
-﻿namespace EpidimiologyReport.Tests
+﻿namespace DTO
 {
     public class Class1
     {
-
-
 
     }
 }

@@ -1,0 +1,40 @@
+    
+    Assignment:
+    
+        1) fix the test
+        make one test with correct parameters
+        second with wrong parameters. Actually,
+        whie writing a test-you have to consider all the possibilities for 
+
+        2)äæø÷ä áprogram ùì ädbcontext
+        injection of dbcontext 
+
+    Topics:   
+
+        2)types of dip implementation
+
+        3)environmet variable-explanations
+
+        4)appsettings configuration files
+
+        5)CLI commands-execute the.net core project by the cmd
+
+        6)deploy, publish, Dockeres, containers, azure
+
+        7)rabitMQ, event, communication between events
+
+        8)life cycle of variables - scopes, transient, singleTone
+
+        scoped:the moset recommended. lives during the request lives;
+        transient:every time I meet the instance i'll create another object, when there is an inner service that I use it in a function
+        projects that are worker service, happends in events, while you call him he will do something, so he always lives, and doesnt dependds on the request, the solution can be transient or make inner scoped
+        singleTone:lives as long as the application is up;
+
+
+    Git link of the project:
+        the project should contains:
+           - test
+           - mocs
+           - log
+           - middleware
+           - appsettings-for configurations.

@@ -3,19 +3,15 @@ namespace EpidimiologyReport.Services.Models
 {
     public class Patient
     {
-        public string PatientId { get; set; }
-
-
-        public List<Location> Locations { get; set; }
+        public string Id { get; set; } = null!;
 
         public Patient()
         {
 
         }
-        public Patient(string patientId, List<Location> locations)
+        public Patient(string patientId)
         {
-            this.PatientId = patientId;
-            this.Locations = locations;
+            this.Id = patientId;
         }
     }
 }

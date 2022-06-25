@@ -23,6 +23,7 @@ namespace EpidimiologyReport.Api.Controllers
             _logger = logger;
 
         }
+
         // GET api/<PatientController>/5
         [HttpGet("{id}")]
         public async Task<Patient> Get(string id)
@@ -33,13 +34,10 @@ namespace EpidimiologyReport.Api.Controllers
 
         // POST api/<PatientController>
         [HttpPost]
-        public async Task Save([FromBody] Patient patient)
+        public  async Task Save([FromBody] Patient patient)
         {
-            _logger.LogInformation("enter to Post function in PatientController with patient id: " + patient.PatientId);
-           await _patientRepository.Save(patient);
+            _logger.LogInformation("enter to Post function in PatientController with patient id: " + patient.Id);
+             await _patientRepository.Save(patient);            
         }
-
-
-     
     }
 }
